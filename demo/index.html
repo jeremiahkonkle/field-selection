@@ -9,6 +9,7 @@
 <body>
 
 <button id="get">get selection</button>
+<button id="set">set selection</button>
 <button id="replace">replace selection</button>
 
 <br />
@@ -31,7 +32,11 @@
             alert($elem.fieldSelection().text);
             window.console && console.log($elem.fieldSelection());
         });
-
+        
+        $('#set').on('click', function() {
+            window.fieldSelection.set($elem[0], 5, 10);
+        });
+        
         $('#replace').on('click', function() {
             $elem.fieldSelection('<REPLACED>');
         });
